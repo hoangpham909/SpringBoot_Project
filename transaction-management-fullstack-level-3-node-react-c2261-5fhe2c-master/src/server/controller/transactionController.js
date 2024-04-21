@@ -1,6 +1,9 @@
 import transactionService from "../service/transactionService.js";
 
 const transactionController = {
+    healthCheck : async (req,res) => {
+        return res.status(200).json({msg: "The service is up and running."})
+    },
     getTransactions: async (req, res) => {
         try {
             const data = transactionService.getTransactions()
@@ -10,7 +13,6 @@ const transactionController = {
         }
     },
     createTransaction: async (req, res) => {
-        console.log("in här")
         try {
             const data = transactionService.createTransaction(req.body)
             return res.status(201).send(data)

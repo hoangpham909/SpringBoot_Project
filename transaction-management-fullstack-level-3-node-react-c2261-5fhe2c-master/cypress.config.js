@@ -1,12 +1,13 @@
-const { defineConfig } = require('cypress')
+import { defineConfig } from "cypress";
 
-module.exports = defineConfig({
+const config = defineConfig({
   env: {
     apiUrl: 'http://localhost:8080',
   },
   e2e: {
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'http://localhost:8080',
     setupNodeEvents(on, config) {},
     supportFile: false,
-  },
-})
+  }
+});
+export default config;

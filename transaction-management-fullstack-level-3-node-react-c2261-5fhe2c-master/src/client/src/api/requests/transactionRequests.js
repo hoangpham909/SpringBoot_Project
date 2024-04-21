@@ -1,7 +1,7 @@
 import http from "../index";
 
 const TransactionRequests = {
-    getTransactions : (bArchived) => {
+    getTransactions : () => {
         return http.get("/transactions");
     },
 
